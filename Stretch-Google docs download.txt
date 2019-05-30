@@ -1,0 +1,51 @@
+﻿Stretch
+   *  While the processes learned here will set you up to be successful in most situations, they are just the tip of the iceberg in learning Git. Independantly research the following topics to learn more about Git.
+   *  Research and understand what a merge conflict is and how to resolve it.
+   *  Reseach the Git commands pull, rebase, merge. These commands will allow you to bring in changes that other developers push to the master branch.
+   *  Reseach the Git commands reset , revert, clean. These commands will allow you to go back and ammends previous commits you have made.
+*  Research and set up a Graphical User Interface (GUI) Git console.
+*  Research and setup SSH keys with Github, so that you do not need to input your username/password each time you push.
+
+
+_____________________________________________________________________
+
+
+
+
+Merge-Conflict: 
+* What:  merge conflict is when Git has an issue figuring out two different effects for the same thing. Such as, two people changing the same line at the same time/ or someone modifying content that is being deleted. Typically occurs at the start of the merge or during the merge.
+* Find it: First you will see the command You have unmerged paths.  Use git status to further view the issue. You will also see three dividers that notify the beginning center and end of the merging issue.  The beginning looks like <<<<<<<<< HEAD. The center is the main issue which is notified like ========. Last you will see where it ends which is symbolized like >>>>>>>>new_branch_to_merge_later.  
+* Ex.       <<<<<<<<<<HEAD
+                
+                ===============
+
+
+
+
+                >>>>>>>new_branch_to_merge_later
+* Resolve: You could open the file that is causing the issue in a editor. Delete all the conflict dividers out and save.  Then commit it back to the project.  Another way is by using Git commands to view ( git status)/ log (git log --merge) /and find the differences between the repo/files (git diff). This is a good starting point.  Next if it fails to start the merge then use (git checkout) to move to the correct branch and (git reset --mixed) to reset the changes of the current directory where the issue has arised.  If the merging conflict happens during the merge then first use (git merge --abort) to stop the merging and return it to it’s original state. Next use ( git reset) to reset the conflict before it arose. 
+
+
+
+
+Pull: Used to download all content from the repo and update it to match what is local. It essentially is split between (git fetch) ( which finds the last commit in the branch {HEAD}) and (git merge): merges the current HEAD to update and become the new commit.
+
+
+Rebase: Similar to merge, but it takes all of the current commits on one branch and adds them another branch. 
+
+
+Reset: Used to solve a merge conflict, git reset literally resets the HEAD to the commit before.
+
+
+Revert: It is like an ‘UNDO’ command, but instead of removing a commit from the project, it inverts the changes on the current commit, makes a new commit and applies the inverts to it.
+
+
+Clean: Kind of like an UNDO command but instead of operating on files added to git like reset and checkout, they operate on files that are untracked. Untracked basically means files in the repo that was not indexed with the (git add) command. 
+
+
+
+
+Set up a GUI Git Console:Basically an alternative of Git command line that is a graphical program that includes every git command. Downloaded GitHUb Desktop, 
+
+
+Set up SSH keys with Github: Copied key added to Github settings, verified in command prompt
